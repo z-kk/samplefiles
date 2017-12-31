@@ -1,0 +1,27 @@
+\newcommand{\hoge}{fugafuga}
+
+\newcommand{\tablefigure}[1]{
+  \ifthenelse{\equal{#1}{a}}{%
+    % 一つ目の引数が1の時の処理
+    \begin{table}[H]
+      \centering
+      \caption{sample}
+      \begin{tabular}{cc|}
+        \hline
+        a & b \\
+        c & d \\
+        \hline
+      \end{tabular}
+    \end{table}
+  }{%else
+    \ifthenelse{\equal{#1}{2}}{%
+      \begin{figure}[H]
+        \centering
+        \includegraphics[width=270pt]{sample.png}
+        \caption{sample}
+      \end{figure}
+    }{%else
+      aでも2でもないとき
+    }
+  }
+}
