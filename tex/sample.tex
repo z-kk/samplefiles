@@ -3,15 +3,11 @@
 \author{author name}
 \date{} % 指定したければ文字列を入れる 削除するとコンパイル日付が入る
 
-\usepackage[dvipdfmx, bookmarks=true, bookmarksnumbered=true, colorlinks=true, linkcolor=black]{hyperref} % 目次からジャンプ可能にする colorlinksを付けないと赤枠で囲われる(cygwin)
-\usepackage{atbegshi} % fiまでmacのしおりの文字化け対応
-\ifnum 42146=\euc"A4A2
-\AtBeginShipoutFirst{\special{pdf:tounicode EUC-UCS2}}
-\else
-\AtBeginShipoutFirst{\special{pdf:tounicode 90ms-RKSJ-UCS2}}
-\fi
-\usepackage[dvipdfmx]{graphicx, color} % 画像を入れる
 \usepackage[top=20truemm, bottom=20truemm, left=25truemm, right=25truemm]{geometry} % 描画範囲指定
+\usepackage[dvipdfmx, bookmarks=true, bookmarksnumbered=true, colorlinks=true, allcolors=blue]{hyperref} % 目次からジャンプ可能にする
+\usepackage{xcolor} % hyperref color 対応
+\usepackage{pxjahyper} % 文字化け対策
+\usepackage[dvipdfmx]{graphicx, color} % 画像を入れる
 \usepackage{float} % 位置指定[H]で位置を強制する
 \usepackage{ifthen} % ifthenelseを使う
 
