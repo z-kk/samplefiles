@@ -8,10 +8,28 @@
 \usepackage{xcolor} % hyperref color 対応
 \usepackage{pxjahyper} % 文字化け対策
 \usepackage[dvipdfmx]{graphicx, color} % 画像を入れる
+\usepackage{listings, plistings} % ソースコードを挿入する
 \usepackage{float} % 位置指定[H]で位置を強制する
 \usepackage{ifthen} % ifthenelseを使う
 
 \usepackage{hoge} % 同フォルダに配置したhoge.styを読む
+
+\lstset { % ソースコードの描画スタイル
+  breaklines=true,
+  language=[LaTeX]TeX,
+  basicstyle=\ttfamily\scriptsize,
+  commentstyle=\color{cyan},
+  classoffset=1,
+  keywordstyle=\color{blue},
+  stringstyle=\color{green},
+  frame=tRBl,
+  framesep=5pt,
+  showstringspaces=false,
+  numbers=left,
+  stepnumber=1,
+  numberstyle=\tiny,
+  tabsize=4,
+}
 
 \begin{document}
 \maketitle % タイトルを表示
@@ -73,5 +91,7 @@ $< $C-x$>< $C-e$>$ で $\backslash $end\{hogehoge\}を\verb|\|begin\{hogehoge\}�
 \clearpage % 図表を全て出力して改ページ
 
 \input{vim.tex} % vim.tex の内容を呼び出す
+
+\lstinputlisting{vim.tex} % vim.tex をソースコードが記載されたファイルとして呼び出す
 
 \end{document}
